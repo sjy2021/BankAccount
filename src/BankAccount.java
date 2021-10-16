@@ -10,7 +10,7 @@ public class BankAccount
 
     public BankAccount(double amount)
     {
-
+        this.balance = amount;
     }
 
     public double getBalance()
