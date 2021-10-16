@@ -8,9 +8,10 @@ public class BankAccount
 
     public BankAccount(){}
 
-    public BankAccount(double amount)
+    public BankAccount(double amount, String accountHolder)
     {
         this.balance = amount;
+        this.accountHolder = accountHolder;
     }
 
     public double getBalance()
@@ -25,6 +26,8 @@ public class BankAccount
 
     public void withDraw(double amount)
     {
-
+        balance-=amount;
     }
+
+
 }
