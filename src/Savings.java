@@ -18,13 +18,9 @@ public class Savings extends BankAccount
   private boolean checkWithDrawLimit()
   {
     if(withDrawLimit == 0)
-    {
       return false;
-    }
     else
-    {
       return true;
-    }
   }
 
   public String monthlyStatement()
