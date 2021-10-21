@@ -12,7 +12,7 @@ public class Main {
         createDefaultAccounts(accountHolders);
         // write a greeting
 
-        writeGreeting();
+        //writeGreeting();
 
         menu[0] = "1. Checking Account";
         menu[1] = "2. Savings Account";
@@ -47,7 +47,7 @@ public class Main {
         double initialDeposit;
         String entry;
 
-        mainMenu();
+        //mainMenu();
         // give user option to get account or make an account
         System.out.println("Please enter a number from the menu above.");
 
@@ -60,26 +60,27 @@ public class Main {
                 if(entry.toLowerCase().equals("y")) {
                     System.out.println("Please enter the amount you would like to deposit: ");
                     initialDeposit = in3.nextDouble();
-
-                    //BankAccount newAccount = new BankAccount(initialDeposit);
-
-                    //Needs to be Checking Account
-                    //Overload BankAccount Superclass method in Checking Class
+                    BankAccount newCheckingAccount = new Checking(initialDeposit);
+                    System.out.println();
                 }
                 else {
                     //BankAccount newAccount = new BankAccount();
+                    BankAccount newCheckingAccount = new Checking();
+                    newCheckingAccount.toString();
                 }
+                
                 System.out.println("Would you like to open another account? Y/N.");
                 entry = in2.nextLine();
                 if(entry.toLowerCase().equals("y")) {
+                    in2.close();
                     mainMenu(); //Print default prompt to use
                 }
-                else {
-                    sentinel = false;
-                    System.out.println();
-                }
+                writeGreeting();
+                // else {
+                //     sentinel = false;
+                //     System.out.println();
+                // }
             }
-
             else if (selection == 2) { //Saving Account
                 System.out.println("Do you have an inital deposit? Y/N");
                 entry = in2.nextLine();
@@ -117,7 +118,7 @@ public class Main {
                 entry = in2.nextLine();
                 if(entry.toLowerCase().equals("y")) {
                     mainMenu(); //Print default prompt to use
-                }
+                }                
                 else {
                     sentinel = false;
                     System.out.println();
@@ -134,9 +135,10 @@ public class Main {
                 //mainMenu();
             }
         }
+        in.close();
 
+    } //End of Main Program
 
-    }
 
     private static void createDefaultAccounts(ArrayList<AccountHolder> holders)
     {
@@ -152,7 +154,19 @@ public class Main {
 
     private static void writeGreeting()
     {
+        Scanner in = new Scanner(System.in);
         System.out.println("Welcome to the Java Bank! " +
                 "\nPlease select (1) to create a new account or press (2) to access your account.");
+        int option = in.nextInt();
+        if (option == 1) {
+            mainMenu();
+        }
+        else if (option == 2) {
+            //Grab the Account Holder Update Methods Here
+        }
+        else {
+            System.out.println("Invalid selection. Please make valid selection.");
+            writeGreeting();
+        }      
     }
 }
