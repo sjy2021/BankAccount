@@ -1,33 +1,29 @@
 import java.util.ArrayList;
+
 import java.util.*;
 
 public class Main {
 
     public static void mainMenu() {
-        String [] menu = new String[4];
+        String [] menu = new String[3];
         // data structure for account holder
         ArrayList<AccountHolder> accountHolders = new ArrayList<>();
 
         // create a method that will create 3 default bank account classes
         createDefaultAccounts(accountHolders);
-        // write a greeting
-
-        //writeGreeting();
 
         menu[0] = "1. Checking Account";
         menu[1] = "2. Savings Account";
         menu[2] = "3. IRA Account";
-        menu[3] = "0. To Quit";
+        //menu[3] = "0. To Quit";
 
         System.out.println("What type of account would you like to open?");
         for(String menuList : menu) {
-            System.out.println(menuList);
+            System.out.println(menuList);   
         }
     }
 
     public static void main(String[] args) {
-        String [] menu = new String[4];
-
         // data structure for account holder
         ArrayList<AccountHolder> accountHolders = new ArrayList<>();
 
@@ -47,12 +43,8 @@ public class Main {
         double initialDeposit;
         String entry;
 
-        //mainMenu();
-        // give user option to get account or make an account
-        System.out.println("Please enter a number from the menu above.");
-
-        //Quits the program if 0 is entered.
-        while (sentinel == true) {
+        while (sentinel = true) {
+            System.out.println("Please make a selection from the menu above.");
             selection = in.nextInt();
             if (selection == 1) { //Checking Account
                 System.out.println("Do you have an inital deposit? Y/N");
@@ -66,19 +58,20 @@ public class Main {
                 else {
                     //BankAccount newAccount = new BankAccount();
                     BankAccount newCheckingAccount = new Checking();
-                    newCheckingAccount.toString();
+                    //newCheckingAccount.toString();
                 }
 
                 System.out.println("Would you like to open another account? Y/N.");
                 entry = in2.nextLine();
                 if(entry.toLowerCase().equals("y")) {
+                    System.out.println();
                     mainMenu(); //Print default prompt to use
                 }
-                writeGreeting();
-                // else {
-                //     sentinel = false;
-                //     System.out.println();
-                // }
+                else {
+                    sentinel = false;
+                    System.out.println();
+                    writeGreeting();
+                }
             }
             else if (selection == 2) { //Saving Account
                 System.out.println("Do you have an inital deposit? Y/N");
@@ -96,10 +89,6 @@ public class Main {
                 if(entry.toLowerCase().equals("y")) {
                     mainMenu(); //Print default prompt to use
                 }
-                else {
-                    sentinel = false;
-                    System.out.println();
-                }
             }
 
             else if (selection == 3) { //IRA Account
@@ -108,7 +97,7 @@ public class Main {
                 if(entry.toLowerCase().equals("y")) {
                     System.out.println("Please enter the amount you would like to deposit: ");
                     initialDeposit = in3.nextDouble();
-                   // BankAccount newAccount = new BankAccount(initialDeposit); //Needs to be Checking Account
+                    // BankAccount newAccount = new BankAccount(initialDeposit); //Needs to be Checking Account
                 }
                 else {
                     //BankAccount newAccount = new BankAccount();
@@ -117,21 +106,11 @@ public class Main {
                 entry = in2.nextLine();
                 if(entry.toLowerCase().equals("y")) {
                     mainMenu(); //Print default prompt to use
-                }                
-                else {
-                    sentinel = false;
-                    System.out.println();
                 }
             }
-
-            else if (selection == 0) { //Quit the program
-                sentinel = false;
-                System.out.println();
-            }
-
             else {
                 System.out.println("Invalid selection. Please enter a number from the menu above.");
-                //mainMenu();
+                mainMenu();
             }
         }
         in.close();
@@ -157,17 +136,21 @@ public class Main {
     {
         Scanner in = new Scanner(System.in);
         System.out.println("Welcome to the Java Bank! " +
-                "\nPlease select (1) to create a new account or press (2) to access your account.");
+                "\nPlease select (1) to create a new account or press (2) to access your account, or (0) to quit.");
         int option = in.nextInt();
+        // //Quits the program if 0 is entered.
         if (option == 1) {
             mainMenu();
         }
         else if (option == 2) {
             //Grab the Account Holder Update Methods Here
         }
+        else if (option == 0) {
+            System.exit(0);
+        }
         else {
             System.out.println("Invalid selection. Please make valid selection.");
             writeGreeting();
-        }      
+        }
     }
 }

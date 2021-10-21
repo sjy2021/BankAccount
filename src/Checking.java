@@ -5,9 +5,9 @@ public class Checking extends BankAccount {
 	private double interestPercent;
 
 	
-	public Checking(){
+	public Checking() {
 		//Return Account Number and information below. 
-		System.out.println("Congratulations on your new Account " + "ACCOUNTHOLDER" + "!"); //Place Account Holder Name here. 	
+		System.out.println("Congratulations on your new Account." + "\n" + this.toString());
 	}
 
 	public Checking(double initialDeposit) {
@@ -38,7 +38,7 @@ public class Checking extends BankAccount {
 	@Override
 	public double getBalance() {
         return super.getBalance();
-    }
+	}
 
 	@Override
     public void deposit(double amount) {
