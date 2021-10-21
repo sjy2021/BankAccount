@@ -68,11 +68,10 @@ public class Main {
                     BankAccount newCheckingAccount = new Checking();
                     newCheckingAccount.toString();
                 }
-                
+
                 System.out.println("Would you like to open another account? Y/N.");
                 entry = in2.nextLine();
                 if(entry.toLowerCase().equals("y")) {
-                    in2.close();
                     mainMenu(); //Print default prompt to use
                 }
                 writeGreeting();
@@ -136,6 +135,8 @@ public class Main {
             }
         }
         in.close();
+        in2.close();
+        in3.close();
 
     } //End of Main Program
 
