@@ -25,6 +25,7 @@ public class AccountHolder
         this.city =city;
         this. state =state;
         this.zip = zip;
+        this.accounts = new ArrayList<>();
     }
 
     public void addAccount(BankAccount account)
@@ -34,12 +35,18 @@ public class AccountHolder
 
     public String getAccountInfo()
     {
+        // return all bank holder info plus account numnber
         return "";
+    }
+
+    public String getName()
+    {
+        return firstName + " " +lastName;
     }
 
     public void updateAccountInfo()
     {
-
+        // able to update all info
     }
 
 

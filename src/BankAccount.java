@@ -2,16 +2,23 @@ public class BankAccount
 {
     private String accountHolder;
 
+    private static int lastAccountNum = 0;
+
     private int accountNumber;
 
     private double balance;
 
-    public BankAccount(){}
+    public BankAccount()
+    { lastAccountNum++;
+        accountNumber = lastAccountNum;}
 
-    public BankAccount(double amount, String accountHolder)
+    public BankAccount(double balance, String accountHolder)
     {
-        this.balance = amount;
+        lastAccountNum++;
+        accountNumber = lastAccountNum;
+        this.balance = balance;
         this.accountHolder = accountHolder;
+
     }
 
     public double getBalance()
