@@ -1,25 +1,13 @@
-public class BankAccount
+public abstract class BankAccount
 {
-    private String accountHolder;
+    protected String accountHolder;
 
-    private static int lastAccountNum = 0;
+    protected static int lastAccountNum = 0;
 
-    private int accountNumber;
+    protected int accountNumber;
 
-    private double balance;
+    protected double balance;
 
-    public BankAccount()
-    { lastAccountNum++;
-        accountNumber = lastAccountNum;}
-
-    public BankAccount(double balance, String accountHolder)
-    {
-        lastAccountNum++;
-        accountNumber = lastAccountNum;
-        this.balance = balance;
-        this.accountHolder = accountHolder;
-
-    }
 
     public double getBalance()
     {
