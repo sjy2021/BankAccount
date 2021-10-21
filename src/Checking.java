@@ -1,4 +1,4 @@
-class Checking extends BankAccount {
+public class Checking extends BankAccount {
 	private static final int OVERDRAFT_FEE;
 	private int withdrawalLimit;
 	private int monthlyFee;
@@ -15,7 +15,7 @@ class Checking extends BankAccount {
 		this.monthlyFee = fee;
 	}
 
-	public getMonthlyFee() {
+	public int getMonthlyFee() {
 		return monthlyFee;
 	}
 
@@ -23,19 +23,19 @@ class Checking extends BankAccount {
 		this.interestPercent = interest;
 	}
 
-	public getInterestPercent() {
+	public double getInterestPercent() {
 		return interestPercent;
 	}
 
-	public getWithdrawalLimit() {
+	public int getWithdrawalLimit() {
 		return withdrawalLimit;
 	}
 
-	public toString() {
-		return "AccountNumber: " + "\n" + //GET ACCOUNT NUMBER FROM BANK ACCOUNT
+	public String toString() {
+		return "AccountNumber: " + "\n" //GET ACCOUNT NUMBER FROM BANK ACCOUNT
 				+ "Interest Percent: " + interestPercent + "\n"
-				+ "Monthly Fee: " + monthlyFee + "\n" + 
-				+ "Withdrawal Limit: " + withdrawalLimit;
+				+ "Monthly Fee: " + getMonthlyFee()+ "\n"
+				+ "Withdrawal Limit: " + getWithdrawalLimit();
 	}
 
 }
