@@ -1,28 +1,29 @@
 public abstract class BankAccount
 {
+    //Bank Account Variables
     protected String accountHolder;
-
-    protected static int lastAccountNum = 0;
-
-    protected int accountNumber;
-
+    private static int lastAccountNum = 0;
+    private int accountNumber;
     protected double balance;
 
+    //Default Constructor Method
+    public BankAccount() {
+        lastAccountNum++;
+        this.accountNumber = lastAccountNum;
+    }
 
     public double getBalance()
     {
-        return balance;
+        return this.balance;
     }
 
-    public void deposit(double amount)
-    {
-        balance += amount;
+    public int getAccountNumber() {
+        return this.accountNumber;
     }
 
-    public void withDraw(double amount)
-    {
-        balance-=amount;
-    }
+    //Abstract methods to be created in sub classes
+    public abstract void deposit(double amount);
 
+    public abstract void withdraw(double amount);
 
 }

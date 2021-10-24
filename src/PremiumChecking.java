@@ -1,25 +1,19 @@
 /*
-Basic Checking accounts have the same $35 Overdraft Fee, $300 Withdrawal Limit, 
-and $1 Transaction Fee.
+Premium Checking accounts have the same $35 Overdraft Fee, $500 Withdrawal Limit, 
+and No Transaction Fees.
 */
-public class Checking extends BankAccount {
+class PremiumChecking extends Checking {
+
 	private static final int OVERDRAFT_FEE = 35;
-	private static final int withdrawalLimit = 300;
-	private static final int transactionFee = 1;
-	protected int accountNum;
-	
-	public Checking() {
+	private static final int withdrawalLimit = 500;
+	private static final int transactionFee = 0;
+
+	public PremiumChecking() {
 		super();
-		System.out.println("\nCongratulations on your new Account!!");
-		System.out.println(toString());
 	}
 
-	public Checking(double initialDeposit) {
-		//super(initialDeposit);
-		super();
-		balance += initialDeposit;
-		System.out.println("\nCongratulations on your new Account!!");
-		System.out.println(toString());
+	public PremiumChecking(double initialDeposit) {
+		super(initialDeposit);
 	}
 
 	public int getTransactionFee() {
@@ -42,7 +36,6 @@ public class Checking extends BankAccount {
 		if (amount > 0) {
 			balance = (balance + amount) - transactionFee;
 			System.out.printf("You've deposited: $%.2f%n", amount);
-			System.out.printf("Transaction Fee: %.2f%n", transactionFee);
 			System.out.printf("Your new balance is: $%.2f%n", balance);
 		}
 		else {
@@ -81,12 +74,8 @@ public class Checking extends BankAccount {
     }
 
 	public String toString() {
-		return "New Checking Account information:"
-				+ "\n================================="
-				+ "\nAccountNumber: " + getAccountNumber()
-				+ "\nBalance: $" + getBalance()
-				+ "\nWithdrawal Limit: $" + getWithdrawalLimit() + "\n"
-				+ "*** REMEMBER: Do not share your Account Number with anyone!!";
+		return super.toString();
 	}
 
 }
+
