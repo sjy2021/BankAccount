@@ -49,14 +49,15 @@ public class Main {
 
     private static void createDefaultAccounts(ArrayList<AccountHolder> holders)
     {
-        AccountHolder holder1 = new AccountHolder("John", "Smith", "100 North Ave", "Rio Rancho", "NM", 87124);
-        IRA ira = new IRA("10/01/1990", 1000, holder1.getName());
-        // holder1.addAccount(ira);
-        holders.add(holder1);
+        AccountHolder jonhSmith = new AccountHolder("John", "Smith", "100 North Ave", "Rio Rancho", "NM", 87124);
+        IRA ira = new Roth(50000, "1985-10-05", 3500, jonhSmith.getName());
+        holders.add(jonhSmith);
 
-        AccountHolder holder2 = new AccountHolder("Alan", "Turing", "", "", "",00000);
-        Savings savings = new Savings(40, holder2.getName());
-        holders.add(holder2);
+        AccountHolder alanTuring = new AccountHolder("Alan", "Turing", "", "", "",00000);
+        Checking checking = new Checking(10000);
+        holders.add(alanTuring);
+
+
     }
 
     private static int writeGreeting(Scanner userInput) {

@@ -1,3 +1,9 @@
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 public class IRA extends BankAccount {
 
@@ -12,49 +18,59 @@ public class IRA extends BankAccount {
     public IRA(String birthDate, double taxIncomeAmt, String accountHolder)
     {
         this.accountHolder = accountHolder;
-        this.birthDate = birthDate;
+        this.birthDate = birthDate; // in the format yyyy-MM-dd
         this.taxIncomeAmt = taxIncomeAmt;
+
     }
 
-    @Override
     public void deposit(double amount) {
-        if(contributionCheck(amount))
-            super.deposit(amount);
+        if(!contributionCheck(amount))
+           balance += amount;
         else
-            System.out.println("You can contributed your max contributions for the year!");
+            System.out.println("You have contributed your max contributions for the year!");
     }
 
-    @Override
-    public void withDraw(double amount) {
-        super.withDraw(amount);
+    public void withdraw(double amount) {
+        if(balance > 0)
+            balance-= amount;
+        else
+            System.out.println("Insufficent funds!");
     }
 
-    @Override
     public double getBalance() {
-        return super.getBalance();
+        return balance;
     }
 
-    private double determineAge()
+    protected double determineAge()
     {
-        return 59.5;
+        LocalDate currentDate = LocalDate.now();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate pastDate = LocalDate.parse(birthDate, dateTimeFormatter);
+        Duration diff = Duration.between(pastDate.atStartOfDay(), currentDate.atStartOfDay());
+
+        return diff.toDays()/ 365.0;
+
     }
 
-    private boolean contributionCheck(double amount)
+    protected boolean contributionCheck(double amount)
     {
-        if(determineAge() == 59.5 && totalContributuons == 6000 )
+        this.totalContributuons += amount;
+        if(determineAge() == 59.5 && totalContributuons > 6000 )
         {
-            return false;
+            return true;
         }
-        else if(determineAge() > 59.5 && totalContributuons == 7000)
+        else if(determineAge() > 59.5 && totalContributuons > 7000)
         {
-            return false;
+            return true;
         }
         else
-            return true;
+            return false;
     }
 
     public String toString()
     {
-        return "";
+        return String.format("IRA Account:\n" +
+                "Holder: %s\n" +
+                "Balance: %f\n", accountHolder, balance);
     }
 }

@@ -3,7 +3,7 @@ public abstract class BankAccount
     //Bank Account Variables
     protected String accountHolder;
     private static int lastAccountNum = 0;
-    private int accountNumber;
+    protected int accountNumber;
     protected double balance;
 
     //Default Constructor Method
