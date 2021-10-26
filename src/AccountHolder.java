@@ -14,7 +14,7 @@ public class AccountHolder
 
     private int zip;
 
-    private ArrayList<BankAccount> accounts;
+    // private ArrayList<BankAccount> accounts;
 
     public AccountHolder(String firstName, String lastName, String street,
                          String city, String state, int zip)
@@ -25,13 +25,13 @@ public class AccountHolder
         this.city =city;
         this. state =state;
         this.zip = zip;
-        this.accounts = new ArrayList<>();
+        // this.accounts = new ArrayList<>();
     }
 
-    public void addAccount(BankAccount account)
-    {
-        accounts.add(account);
-    }
+//    public void addAccount(BankAccount account)
+//    {
+//        accounts.add(account);
+//    }
 
     public String getAccountInfo()
     {
@@ -48,6 +48,11 @@ public class AccountHolder
     {
         // able to update all info
     }
+
+   /* public ArrayList<BankAccount> getAccounts()
+    {
+        return accounts;
+    }*/
 
 
 

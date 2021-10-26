@@ -22,6 +22,9 @@ public class Main {
         BankAccount bankAccounts [] = new BankAccount[20];
         int numAccounts = 0;
 
+        // map
+
+        // bankaccount obj, accountholder
         // write a greeting
         do {
             option = writeGreeting(userInput);
@@ -30,7 +33,7 @@ public class Main {
                 bankAccounts[numAccounts++] = createAccount(userInput);
             }
             else if (option == 2) { //Deposit
-
+                //
             }
             else if (option == 3) { //Withdraw
 
@@ -48,7 +51,7 @@ public class Main {
     {
         AccountHolder holder1 = new AccountHolder("John", "Smith", "100 North Ave", "Rio Rancho", "NM", 87124);
         IRA ira = new IRA("10/01/1990", 1000, holder1.getName());
-        holder1.addAccount(ira);
+        // holder1.addAccount(ira);
         holders.add(holder1);
 
         AccountHolder holder2 = new AccountHolder("Alan", "Turing", "", "", "",00000);
