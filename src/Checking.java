@@ -15,7 +15,6 @@ public class Checking extends BankAccount {
 	}
 
 	public Checking(double initialDeposit) {
-		//super(initialDeposit);
 		super();
 		balance += initialDeposit;
 		System.out.println("\nCongratulations on your new Account!!");

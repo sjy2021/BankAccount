@@ -1,42 +1,27 @@
-import java.util.ArrayList;
-
 public class AccountHolder
 {
     private String firstName;
-
     private String lastName;
-
     private String street;
-
     private String city;
-
     private String state;
-
     private int zip;
+    private static int lastCustomerId = 5000;
+    private int customerId;
 
     // private ArrayList<BankAccount> accounts;
 
     public AccountHolder(String firstName, String lastName, String street,
                          String city, String state, int zip)
     {
+        lastCustomerId++;
+        this.customerId = lastCustomerId;
         this.firstName = firstName;
         this.lastName =lastName;
         this.street =street;
         this.city =city;
         this. state =state;
         this.zip = zip;
-        // this.accounts = new ArrayList<>();
-    }
-
-//    public void addAccount(BankAccount account)
-//    {
-//        accounts.add(account);
-//    }
-
-    public String getAccountInfo()
-    {
-        // return all bank holder info plus account numnber
-        return "";
     }
 
     public String getName()
@@ -44,16 +29,29 @@ public class AccountHolder
         return firstName + " " +lastName;
     }
 
-    public void updateAccountInfo()
-    {
-        // able to update all info
+    public int getCustomerId() {
+        return customerId;
     }
 
-   /* public ArrayList<BankAccount> getAccounts()
+    public void updateAccountHolderName(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public void updateAddress(String street, String city, String state, int zip) {
+        this.street = street;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+    }
+    
+    public String getAccountInfo()
     {
-        return accounts;
-    }*/
-
-
-
+        // return all bank holder info plus account numnber
+        return "\nAccount Information"
+                + "\n================================="
+                + "\nCustomer Number: " + getCustomerId() 
+                + "\nAccount Holder: " + getName()
+                + "\nAddress: " + street + " " + city + ", " + state + " " + zip;
+    }
 }
