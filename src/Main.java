@@ -61,6 +61,7 @@ public class Main {
                 System.out.println("*********************************");
                 System.out.println("Your Customer Number is: " + customerId);
                 System.out.println("Please keep this number in your records!");
+                System.out.println();
                 
                 //Ties Bank Account to Account Holder
                 acctdef.put(newAcct.getCustomerId(), String.valueOf(newAccount.getAccountNumber()));
@@ -121,17 +122,16 @@ public class Main {
 
     private static int writeGreeting(Scanner userInput) {
         System.out.println("Welcome to the Java Bank!");
-        System.out.println("1. Create New Account");
-        System.out.println("2. Deposit Money");
-        System.out.println("3. Withdraw Money");
-        System.out.println("4. Quit");
+        System.out.println("1. New Customer");
+        System.out.println("2. Existing Customer");
+        System.out.println("3. Quit");
 
         int option;
         do {
             System.out.println("Select option from menu above...");
             option = userInput.nextInt();
             userInput.nextLine();
-        } while (option < 1 || option > 4);
+        } while (option < 1 || option > 3);
 
         return option;
     }

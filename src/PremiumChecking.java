@@ -4,9 +4,9 @@ and No Transaction Fees.
 */
 class PremiumChecking extends Checking {
 
-	private static final int OVERDRAFT_FEE = 35;
-	private static final int withdrawalLimit = 500;
-	private static final int transactionFee = 0;
+	private static final double OVERDRAFT_FEE = 35.00;
+	private static final double withdrawalLimit = 500.00;
+	private static final double transactionFee = 0.00;
 
 	public PremiumChecking() {
 		super();
@@ -16,15 +16,15 @@ class PremiumChecking extends Checking {
 		super(initialDeposit);
 	}
 
-	public int getTransactionFee() {
+	public double getTransactionFee() {
 		return transactionFee;
 	}
 
-	public int getWithdrawalLimit() {
+	public double getWithdrawalLimit() {
 		return withdrawalLimit;
 	}
 
-	public int getOverdraftFee() {
+	public double getOverdraftFee() {
 		return OVERDRAFT_FEE;
 	}
 

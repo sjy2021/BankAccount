@@ -3,9 +3,9 @@ Basic Checking accounts have the same $35 Overdraft Fee, $300 Withdrawal Limit,
 and $1 Transaction Fee.
 */
 public class Checking extends BankAccount {
-	private static final int OVERDRAFT_FEE = 35;
-	private static final int withdrawalLimit = 300;
-	private static final int transactionFee = 1;
+	private static final double OVERDRAFT_FEE = 35.00;
+	private static final double withdrawalLimit = 300.00;
+	private static final double transactionFee = 1.00;
 	protected int accountNum;
 	
 	public Checking() {
@@ -21,15 +21,15 @@ public class Checking extends BankAccount {
 		System.out.println(toString());
 	}
 
-	public int getTransactionFee() {
+	public double getTransactionFee() {
 		return transactionFee;
 	}
 
-	public int getWithdrawalLimit() {
+	public double getWithdrawalLimit() {
 		return withdrawalLimit;
 	}
 
-	public int getOverdraftFee() {
+	public double getOverdraftFee() {
 		return OVERDRAFT_FEE;
 	}
 
