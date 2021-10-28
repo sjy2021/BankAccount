@@ -109,7 +109,7 @@ public class Main {
         acctdef.put(holder1.getCustomerId(), String.valueOf(ira.getAccountNumber()));
 
         AccountHolder holder2 = new AccountHolder("Alan", "Turing", "", "", "", 00000);
-        Savings savings = new Savings(40, holder2.getName());
+        Savings savings = new Savings(50, holder2.getName());
         holders.add(holder2);
         acctdef.put(holder2.getCustomerId(), String.valueOf(savings.getAccountNumber()));
 
