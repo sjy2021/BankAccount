@@ -6,6 +6,8 @@ public class Roth extends IRA{
     {
         super(birthDate,taxIncomeAmt,accountHolder);
         this.grossIncome = grossIncome;
+        System.out.println("\nCongratulations on your new Account!!");
+        System.out.println(toString());
     }
 
     public void deposit(double amount)

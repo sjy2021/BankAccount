@@ -1,9 +1,6 @@
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
 
 public class IRA extends BankAccount {
 
@@ -20,7 +17,8 @@ public class IRA extends BankAccount {
         this.accountHolder = accountHolder;
         this.birthDate = birthDate; // in the format yyyy-MM-dd
         this.taxIncomeAmt = taxIncomeAmt;
-
+        System.out.println("\nCongratulations on your new IRA Account!!");
+        System.out.println(toString());
     }
 
     public void deposit(double amount) {
@@ -69,8 +67,13 @@ public class IRA extends BankAccount {
 
     public String toString()
     {
-        return String.format("IRA Account:\n" +
+        return String.format("IRA Account Information:\n" +
+                "=======================\n" +
                 "Holder: %s\n" +
-                "Balance: %f\n", accountHolder, balance);
+                "Account Number: %d\n" +
+                "Balance: $%.2f\n" +
+                "*** REMEMBER: Do not share your Account Number with anyone!!", accountHolder, accountNumber, balance);
+
     }
+
 }
