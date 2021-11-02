@@ -105,7 +105,7 @@ public class Main {
 
     private static void createDefaultAccounts(ArrayList<AccountHolder> holders, Map<Integer, String> acctdef) {
         AccountHolder holder1 = new AccountHolder("John", "Smith", "100 North Ave", "Rio Rancho", "NM", 87124);
-        IRA ira = new IRA("10/01/1990", 1000, holder1.getName());
+        IRA ira = new Roth(70000,"10/01/1990", 14000, holder1.getName());
         holders.add(holder1);
         acctdef.put(holder1.getCustomerId(), String.valueOf(ira.getAccountNumber()));
 

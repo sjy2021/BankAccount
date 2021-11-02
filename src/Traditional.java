@@ -31,7 +31,6 @@ public class Traditional extends IRA{
                 balance = balance - ((amount * PENTALY)+amount);
             else
                 balance = balance -amount;
-            checkRequiredAge();
         }
         else
             System.out.println("Insufficent funds!");
