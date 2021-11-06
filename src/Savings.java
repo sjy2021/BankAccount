@@ -1,5 +1,5 @@
 public class Savings extends BankAccount{
-  //Interest rate is 0.15%
+  //Interest rate is 0.15%/100
   private static final double InterestRate = 0.0015;
   private double MinimumDeposit = 50.00;
   private int NumofWithdrawals = 0;
